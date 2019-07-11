@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #wrap ul{
+            list-style: none;
+        }
+        #wrap a{
+            text-decoration: none;
+            color: #555555;
+            position: relative;
+        }
+        #wrap .zongti{
+            width: 195px;
+            height: 480px;
+            float: left;
+            position: relative;
+            left: 265px;
+        }
+        #wrap .cate{
+            line-height:27px;
+        }
+        #wrap .cate_content{
+            width: 800px;
+            height: 480px;
+            float: left;
+            border: 1px solid black;
+            position: absolute;
+            left: 200px;
+            top: 0px;
+            z-index: 900;
+            display: none;
+        }
+        #rotary{
+            width: 590px;
+            height: 470px;
+            margin: auto;
+            position: relative;
+        }
+        #rotary div{
+            width: 590px;
+            height: 470px;
+            position: absolute;
+            left: 0px;
+            top: 0;
+        }
+        #wrap #rotary ul{
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+        }
+        #wrap #rotary ul li{
+            width: 10px;
+            height: 10px;
+            background-color: darkgray;
+            border-radius: 50%;
+            float: left;
+            margin-left: 5px;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        #miaosha{
+            width: 990px;
+            height: 275px;
+            border: solid 1px black;
+            margin: auto;
+            margin-top: 30px;
+        }
+        #miaosha div{
+            height: 275px;
+            width: 190px;
+            border: solid 1px black;
+        }
+        #miaosha div:nth-child(1){
+            background-image: url("");
+        }
+        #miaosha div:nth-child(2){
+            background-image: url("");
+        }
+        #miaosha div:nth-child(3){
+            background-image: url("");
+        }
+        #rotary div:nth-child(1){
+            background-image: url("../img/5ce2022cN68e8728d.jpg!q90!cc_590x470.webp");
+        }
+        #rotary div:nth-child(2){
+            background-image: url("../img/125c67bcd392e4ad.jpg!q90!cc_590x470.webp");
+        }
+        #rotary div:nth-child(3){
+            background-image: url("../img/871d8ce3aa6d34f5.jpg!q90!cc_590x470.webp");
+        }
+        #rotary div:nth-child(4){
+            background-image: url("../img/c98979985168d7fb.jpg!q90!cc_590x470.webp");
+        }
+        #rotary div:nth-child(5){
+            background-image: url("../img/ccd6f81e88fcfae5.jpg!q90!cc_590x470.webp");
+        }
+        #rotary div:nth-child(6){
+            background-image: url("../img/cfb2f1ab.jpg");
+        }
+        #rotary div:nth-child(7){
+            background-image: url("../img/da8501dd1ca5be37.jpg!q90!cc_590x470.webp");
+        }
+        #rotary div:nth-child(8){
+            background-image: url("../img/f61a5eac67231cd7.jpg!q90!cc_590x470.webp");
+        }
+        @keyframes huajin {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+        }
+        @keyframes huachu {
+            from{
+                opacity: 1;
+            }
+            to{
+                opacity: 0;
+            }
+        }
+        #rotary .a{
+            animation: huajin 1s;
+            opacity: 1;
+        }
+        #rotary .b{
+            animation: huachu 1s;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="menu">
+        <ul class="zongti">
+            <li class="cate">
+                <a class="cate_lk" href="//jiadian.jd.com">家用电器</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>电视</dt>
+                    <dt>空调</dt>
+                    <dt>洗衣机</dt>
+                    <dt>冰箱</dt>
+                    <dt>厨卫大电</dt>
+                    <dt>厨房小电</dt>
+                    <dt>生活电器</dt>
+                    <dt>个护健康</dt>
+                    <dt>视听音影</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate" href="//shouji.jd.com/">手机</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//wt.jd.com">运营商</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//shuma.jd.com/">数码</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>手机通讯</dt>
+                    <dt>运营商</dt>
+                    <dt>手机配件</dt>
+                    <dt>摄影摄像</dt>
+                    <dt>数码配件</dt>
+                    <dt>影音娱乐</dt>
+                    <dt>电子教育</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//diannao.jd.com/">电脑</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//bg.jd.com">办公</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>电脑整机</dt>
+                    <dt>电脑配件</dt>
+                    <dt>外设产品</dt>
+                    <dt>游戏设备</dt>
+                    <dt>网络产品</dt>
+                    <dt>办公设备</dt>
+                    <dt>文具</dt>
+                    <dt>耗材</dt>
+                    <dt>服务产品</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//channel.jd.com/home.html">家居</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/furniture.html">家具</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//jzjc.jd.com/">家装</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/kitchenware.html">厨具</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>厨具</dt>
+                    <dt>家纺</dt>
+                    <dt>生活日用</dt>
+                    <dt>家装软饰</dt>
+                    <dt>灯具</dt>
+                    <dt>家具</dt>
+                    <dt>全屋定制</dt>
+                    <dt>建筑材料</dt>
+                    <dt>厨房卫浴</dt>
+                    <dt>五金电工</dt>
+                    <dt>装修设计</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//channel.jd.com/1315-1342.html">男装</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/1315-1343.html">女装</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/children.html">童装</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/1315-1345.html">内衣</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>女装</dt>
+                    <dt>男装</dt>
+                    <dt>内衣</dt>
+                    <dt>配饰</dt>
+                    <dt>童装</dt>
+                    <dt>童鞋</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//beauty.jd.com/">美妆</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/beauty.html">个护清洁</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/pet.html">宠物</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>面部护肤</dt>
+                    <dt>香水彩妆</dt>
+                    <dt>男士护肤</dt>
+                    <dt>洗发护发</dt>
+                    <dt>口腔护理</dt>
+                    <dt>身体护理</dt>
+                    <dt>女性护理</dt>
+                    <dt>纸品清洗</dt>
+                    <dt>家庭清洁</dt>
+                    <dt>宠物生活</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//channel.jd.com/womensshoes.html">女鞋</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/bag.html">箱包</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/watch.html">钟表</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/jewellery.html">珠宝</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>时尚女鞋</dt>
+                    <dt>潮流女包</dt>
+                    <dt>精品男包</dt>
+                    <dt>功能箱包</dt>
+                    <dt>奢侈品</dt>
+                    <dt>精选大牌</dt>
+                    <dt>钟表</dt>
+                    <dt>珠宝首饰</dt>
+                    <dt>金银投资</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//channel.jd.com/mensshoes.html">男鞋</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/yundongcheng.html">运动</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/outdoor.html">户外</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>流行男鞋</dt>
+                    <dt>运动鞋包</dt>
+                    <dt>运动服饰</dt>
+                    <dt>健身训练</dt>
+                    <dt>骑行运动</dt>
+                    <dt>体育用品</dt>
+                    <dt>户外鞋服</dt>
+                    <dt>户外装备</dt>
+                    <dt>垂钓用品</dt>
+                    <dt>游泳用品</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//xinfang.jd.com/">房产</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//car.jd.com/">汽车</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//che.jd.com/">汽车用品</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>房产</dt>
+                    <dt>汽车车型</dt>
+                    <dt>汽车价格</dt>
+                    <dt>汽车品牌</dt>
+                    <dt>维修保养</dt>
+                    <dt>汽车装饰</dt>
+                    <dt>车载电器</dt>
+                    <dt>美容清洗</dt>
+                    <dt>安全自驾</dt>
+                    <dt>汽车服务</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//baby.jd.com">母婴</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//toy.jd.com/">玩具乐器</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>奶粉</dt>
+                    <dt>营养辅食</dt>
+                    <dt>尿裤湿巾</dt>
+                    <dt>喂养用品</dt>
+                    <dt>洗护用品</dt>
+                    <dt>寝居服饰</dt>
+                    <dt>妈妈专区</dt>
+                    <dt>童车童床</dt>
+                    <dt>玩具</dt>
+                    <dt>乐器</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//channel.jd.com/food.html">食品</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//jiu.jd.com">酒类</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//fresh.jd.com">生鲜</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//china.jd.com">特产</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>新鲜水果</dt>
+                    <dt>蔬菜蛋品</dt>
+                    <dt>精选肉类</dt>
+                    <dt>海鲜水产</dt>
+                    <dt>冷饮冻食</dt>
+                    <dt>中外名酒</dt>
+                    <dt>进口食品</dt>
+                    <dt>休闲食品</dt>
+                    <dt>地方特产</dt>
+                    <dt>茗茶</dt>
+                    <dt>饮料冲调</dt>
+                    <dt>粮油调味</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//art.jd.com">艺术</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/1672-2599.html">礼品鲜花</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//nong.jd.com">农资绿植</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>艺术品</dt>
+                    <dt>火机烟具</dt>
+                    <dt>礼品</dt>
+                    <dt>鲜花速递</dt>
+                    <dt>绿植园艺</dt>
+                    <dt>种子</dt>
+                    <dt>农药</dt>
+                    <dt>肥料</dt>
+                    <dt>畜牧养殖</dt>
+                    <dt>农机农具</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//health.jd.com">医药保健</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//channel.jd.com/9192-9196.html">计生情趣</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>中西药品</dt>
+                    <dt>营养健康</dt>
+                    <dt>营养成分</dt>
+                    <dt>滋补养生</dt>
+                    <dt>计生情趣</dt>
+                    <dt>保健器械</dt>
+                    <dt>护理护具</dt>
+                    <dt>隐形眼镜</dt>
+                    <dt>健康服务</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//book.jd.com/">图书</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//mvd.jd.com/">文娱</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//e.jd.com/ebook.html">电子书</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>文学</dt>
+                    <dt>童书</dt>
+                    <dt>教材教辅</dt>
+                    <dt>人文社科</dt>
+                    <dt>经管励志</dt>
+                    <dt>艺术</dt>
+                    <dt>科学技术</dt>
+                    <dt>生活</dt>
+                    <dt>刊/原版</dt>
+                    <dt>文娱音像</dt>
+                    <dt>教育培训</dt>
+                    <dt>电子书</dt>
+                    <dt>邮币</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//jipiao.jd.com/">机票</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//hotel.jd.com/">酒店</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//trip.jd.com/">旅游</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//ish.jd.com/">生活</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>交通出行</dt>
+                    <dt>酒店预订</dt>
+                    <dt>旅游度假</dt>
+                    <dt>定制旅游</dt>
+                    <dt>演出票务</dt>
+                    <dt>生活缴费</dt>
+                    <dt>生活服务</dt>
+                    <dt>彩票</dt>
+                    <dt>游戏</dt>
+                    <dt>海外生活</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//licai.jd.com/">理财</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//z.jd.com/">众筹</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//baitiao.jd.com">白条</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//bao.jd.com/">保险</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>理财</dt>
+                    <dt>众筹</dt>
+                    <dt>东家</dt>
+                    <dt>白条</dt>
+                    <dt>支付</dt>
+                    <dt>保险</dt>
+                    <dt>股票</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//anzhuang.jd.com">安装</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//jdwx.jd.com">维修</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//cleanclean.jd.com">清洗</a>
+                <span class="cate_line">/</span>				      <a class="cate_lk" href="//2.jd.com/">二手</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>家电安装</dt>
+                    <dt>办公安装</dt>
+                    <dt>家居安装</dt>
+                    <dt>家电维修</dt>
+                    <dt>手机维修</dt>
+                    <dt>办公维修</dt>
+                    <dt>数码维修</dt>
+                    <dt>清洗保养</dt>
+                    <dt>特色服务</dt>
+                    <dt>二手数码</dt>
+                    <dt>二手电脑</dt>
+                    <dt>二手奢品</dt>
+                    <dt>二手书</dt>
+                </dl>
+            </div>
+            <li class="cate">
+                <a class="cate_lk" href="//imall.jd.com/">工业品</a>
+            </li>
+            <div class="cate_content">
+                <dl>
+                    <dt>工具</dt>
+                    <dt>劳动防护</dt>
+                    <dt>工控配电</dt>
+                    <dt>仪器仪表</dt>
+                    <dt>清洁用品</dt>
+                    <dt>化学品</dt>
+                    <dt>安全消防</dt>
+                    <dt>仓储包装</dt>
+                    <dt>焊接紧固</dt>
+                    <dt>机械配件</dt>
+                    <dt>暖通照明</dt>
+                    <dt>实验用品</dt>
+                </dl>
+            </div>
+        </ul>
+    </div>
+    <div id="rotary"><!--轮播图-->
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="miaosha">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script>
+    $(function () {
+        $("#rotary ul li").click(function () {
+            var index=$(this).index();
+            $("#rotary div").eq(index).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a");
+        });
+        $("#rotary div").mousemove(function () {
+            clearInterval(a);
+        });
+        var i = 0;
+        //定时器自动播放的效果
+        var a;
+        a = setInterval(function () {
+            i++;
+            if (i>4){
+                i=0;
+            }
+            $("#rotary div").eq(i).addClass("a").removeClass("b").siblings("div").addClass("b").removeClass("a");
+        },2000);
+    });
+    $(function () {
+        var i=$("#wrap ul li").index();
+        $(".cate_content").css("background-color","gray")
+        $(".cate_content").css("opacity","0.5")
+        $("li").mousemove(function () {
+            $(this).eq(i).siblings("div").toggle().children("dd").show()
+        });
+        $("li").mouseout(function () {
+            $(this).eq(i).siblings("div").toggle().children("dd").hide()
+        });
+    })
+</script>
+<!--<script>-->
+    <!--$(function () {-->
+        <!--var times;-->
+        <!--$("#rotary div").mouseover(function () {-->
+            <!--clearInterval(times);-->
+        <!--})-->
+        <!--$("#rotary div").mouseout(function () {-->
+            <!--times = setInterval(plus, 3000);-->
+        <!--})-->
+        <!--var index = 0;-->
+        <!--var plus = function () {-->
+            <!--index++;-->
+            <!--if (index == $("#rotary div").length) {-->
+                <!--index = 0;-->
+            <!--}-->
+            <!--for (var i = 0; i < $("#rotary div").length; i++) {-->
+                <!--$("#rotary div").eq(i).css("opacity", "0");-->
+            <!--}-->
+            <!--$("#rotary div").eq(index).css("opacity", "1");-->
+        <!--}-->
+        <!--// $("#img1").click(plus);-->
+        <!--times = setInterval(plus, 3000);-->
+    <!--})-->
+    <!--var index01 = 0;-->
+    <!--var plus01 = function () {-->
+        <!--index01&#45;&#45;;-->
+        <!--if (index01 == -1) {-->
+            <!--index01 = $("#rotary div").length - 1;-->
+        <!--}-->
+        <!--for (var j = 0; j < $("#rotary div").length; j++) {-->
+            <!--$("#rotary div").eq(j).css("opacity", "0");-->
+        <!--}-->
+        <!--$("#rotary div").eq(index01).css("opacity", "1");-->
+    <!--}-->
+    <!--$("#rotary").click(plus01);-->
+<!--</script>-->
+</body>
+</html>
